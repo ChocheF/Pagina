@@ -11,8 +11,8 @@ import csv from "csv-writer";
 import { getDataUrl } from "./lib/lee_pagina.js";
 
 // Se establecen constantes de donde obtener los datos
-const ruta = "https://www.df.cl/noticias/site/tax/port/all/taxport_3_20__1.html/";
-const filtro_a_usar = ".col-xs-12 col-sm-12 col-md-8 pad-none";
+const ruta = "https://www.meganoticias.cl/calidad-de-vida/";
+const filtro_a_usar = ".box-articulos";
 
 /*
     En este caso no se usa la constante de la biblioteca
@@ -34,8 +34,8 @@ getDataUrl(ruta, filtro_a_usar)
     let articulos = $("article");
     console.log("Cantidad de Artículos", articulos.length);
 
-    let titulo = $(articulos[10]).find("div.col-md-12 noticia-horizontal div.col-md-9 col-sm-9 col-xs-9 h2 a").text();
-    let fecha = $(articulos[10]).find("div.col-md-12 noticia-horizontal div.col-md-9 col-sm-9 col-xs-9 .fecha aright").text().trim();
+    let titulo = $(articulos[10]).find("figure div.bottom h2").text();
+    let fecha = $(articulos[10]).find("figure .bottom .fecha").text().trim();
 
     console.log("titulo en posición 10", titulo);
     console.log("fecha en posición 10", fecha);
@@ -54,7 +54,7 @@ getDataUrl(ruta, filtro_a_usar)
       // y se quitan los caracteres (espacios) que están ántes
       // y después del contenido.
       let fecha = $(articulos[indice])
-        .find("div.col-md-12 noticia-horizontal div.col-md-9 col-sm-9 col-xs-9 .fecha aright") // Busca el elemento
+        .find("figure .bottom .fecha") // Busca el elemento
         .text() // extrae el texto visible en página
         .trim(); // quita los espacios
 
@@ -128,11 +128,11 @@ getDataUrl(ruta, filtro_a_usar)
 
     // Se inicializa el ojeto de escritura
     // donde indicamos que queremos grabar el archivo en el mismo directorio
-    // el archivo tendrá por nombre "noticias.csv"
+    // el archivo tendrá por nombre "covid.csv"
     // Además para identificar cada dato, el encabezado del CSV será:
     // DATE, QTY
     const archivo_csv = createObjectCsvWriter({
-      path: "./noticias.csv", // acá indicamos donde se grabará el archivo
+      path: "./mega.csv", // acá indicamos donde se grabará el archivo
       header: [
         { id: "dia", title: "DATE" },
         { id: "cantidad", title: "QTY" }
