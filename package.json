@@ -1,17 +1,17 @@
 {
-  "name": "viz_covid",
+  "name": "viz_financiero",
   "version": "1.0.0",
-  "main": "datos_covid.js",
+  "main": "datos_financieros.js",
   "description": "Proyecto de contador de noticias por día",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit"
   },
   "keywords": [
-    "covid",
+    "financiero",
     "csv",
     "news"
   ],
-  "author": "Cristian Acuña",
+  "author": "Jorge Figueroa",
   "private": true,
   "type": "module",
   "dependencies": {
@@ -21,5 +21,17 @@
   },
   "devDependencies": {
     "twitter": "^1.7.1"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChocheF/pagina.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChocheF/pagina/issues"
+  },
+  "homepage": "https://github.com/ChocheF/pagina#readme"
 }
